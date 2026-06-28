@@ -1,12 +1,23 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-int ALLOWED_ATTEMPTS = 7;
+#define ALLOWED_ATTEMPTS 7
+
+int getRandom (void) {
+    int secret = (rand() % 100) + 1;
+
+    printf("Secret number: %d\n", secret);
+    return secret;
+}
 
 int main(){
+    srand((unsigned)time(NULL));
+
     while(1) {
-        int random = 60;
+        int random = getRandom();
         int guess;
-        for (int i=0; i<ALLOWED_ATTEMPTS; i++) {
+        for (int i=0; i < ALLOWED_ATTEMPTS; i++) {
             printf("Provide a guess for integer between 1-100 inclusive:\n");
             scanf("%d", &guess);
 
