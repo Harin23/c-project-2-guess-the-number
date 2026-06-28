@@ -27,7 +27,6 @@ int main() {
 
     while (1) {
         int random = getRandom();
-        printf("%d\n", random);
         int guess;
         for (int i = 0; i < ALLOWED_ATTEMPTS; i++) {
             printf("Provide a guess for integer between 1-100 inclusive:\n");
